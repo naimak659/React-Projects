@@ -1,16 +1,18 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
-import { Button } from "./components/ui/button";
-import Navbar from "./components/com/Navbar";
+import Navbar from "./components/Navbar";
+import { ThemeProvider } from "./components/theme-provider";
+import Main from "./components/Main";
+// import Main from "./components/main.jsx";
+// import { DatePickerDemo } from "./components/DatePickerDemo";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <Navbar />
+      <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+        <Navbar />
+        <Main />
+      </ThemeProvider>
     </>
   );
 }
